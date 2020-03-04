@@ -15,7 +15,7 @@ const Character = ({ name, gender, birth_year, edited, homeworld, species }) =>
         Homeworld : <LinkContainer url={homeworld} />
       </ListGroup.Item>
       <ListGroup.Item>
-        Species : <LinkContainer url={species[0]} />
+        Species : {species.map((item, index) => <LinkContainer url={item} key={index} />)}
       </ListGroup.Item>
     </ListGroup>
     <Card.Footer>
