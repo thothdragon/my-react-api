@@ -1,8 +1,11 @@
 import React from 'react';
+import DataContainer from './containers/DataContainer';
+import { Container } from 'react-bootstrap'
 
 const App = () =>
-  <div>
-    Hello World !
-  </div>
+  <Container>
+    <DataContainer />
+  </Container>
   ;
+
 export default App;
