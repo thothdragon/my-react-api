@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 const App = () =>
   <Container>
-    <DataContainer />
+    <DataContainer resource="blabladodo" />
   </Container>
   ;
 
