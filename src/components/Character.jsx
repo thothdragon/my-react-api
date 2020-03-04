@@ -3,22 +3,20 @@ import { ListGroup, Card } from 'react-bootstrap';
 
 const Character = ({ name, gender, birth_year, edited }) =>
   <Card>
-    <Card.Header>
-      <Card.Title>Character</Card.Title>
-      <Card.Subtitle>{name}</Card.Subtitle>
-    </Card.Header>
+    <Card.Header as="h3">{name}</Card.Header>
     <Card.Body>
-      <ListGroup>
-        <ListGroup.Item>Gender : {gender}</ListGroup.Item>
-        <ListGroup.Item>Birth year : {birth_year}</ListGroup.Item>
-      </ListGroup>
+      <Card.Subtitle>Character</Card.Subtitle>
     </Card.Body>
+    <ListGroup variant="flush">
+      <ListGroup.Item>Gender : {gender}</ListGroup.Item>
+      <ListGroup.Item>Birth year : {birth_year}</ListGroup.Item>
+    </ListGroup>
     <Card.Footer>
       <small className="text-muted">
         Last updated {new Date(edited).toDateString()}
       </small>
     </Card.Footer>
-  </Card>
+  </Card >
   ;
 
 export default Character;

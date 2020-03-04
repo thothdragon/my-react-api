@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import Loader from 'react-loader-spinner';
 import Character from '../components/Character';
 
 export default class DataContainer extends Component {
@@ -19,14 +20,11 @@ export default class DataContainer extends Component {
     const { data } = this.state;
 
     if (!data) {
-      return <div>Loading...</div>
+      return <Loader type="Puff" color="#somecolor" height={80} width={80} />
     }
 
     return <Character
-      name={data.name}
-      gender={data.gender}
-      birth_year={data.birth_year}
-      edited={data.edited}
+      {...data}
     />
       ;
   }
