@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import Loader from 'react-loader-spinner';
-import { ListGroup, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Character, Planet } from '../components';
+import { ListGroup, Button } from 'react-bootstrap';
+import { Character, Planet, Species } from '../components';
+import { parseSwapiUrl } from '../utils';
 
 const componentsByResource = {
   people: Character,
   planets: Planet,
+  species: Species,
 }
 
 const ListItem = ({ name, url }) => {
-  const matches = url.match(/^https:\/\/swapi\.co\/api\/(\w+)\/(\d+)\/$/);
-  const [match, resource, id] = matches;
+  const [resource, id] = parseSwapiUrl(url);
 
   return (
     <ListGroup.Item>
@@ -60,11 +61,11 @@ export default class DataContainer extends Component {
       return (
         <div className="text-center">
           <Loader
-            type="Puff"
-            color="#00BFFF"
+            type="Oval"
+            color="#bf9b30"
             height={100}
             width={100}
-            timeout={30000} //3 secs
+          // timeout={30000} //30 secs
           />
         </div>
       )

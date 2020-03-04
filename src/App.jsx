@@ -1,10 +1,14 @@
 import React from 'react';
 import DataContainer from './containers/DataContainer';
-import { Container } from 'react-bootstrap'
+import { Container, Image } from 'react-bootstrap';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { StarWarsLogoLego } from './images';
 
 const App = () =>
   <Container>
+    <div className="d-flex d-flex-colums justify-content-center align-items-center">
+      <Image src={StarWarsLogoLego} />
+    </div>
     <BrowserRouter>
       <Switch>
         <Route exact path="/:resource(\w+)" component={DataContainer} />
