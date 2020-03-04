@@ -2,20 +2,16 @@ import React from 'react';
 import { ListGroup, Card } from 'react-bootstrap';
 import LinkContainer from '../containers/LinkContainer';
 
-const Character = ({ name, gender, birth_year, edited, homeworld, species }) =>
+const Character = ({ name, homeworld, language, edited }) =>
   <Card>
     <Card.Header as="h3">{name}</Card.Header>
     <Card.Body>
-      <Card.Subtitle>Character</Card.Subtitle>
+      <Card.Subtitle>Species</Card.Subtitle>
     </Card.Body>
     <ListGroup variant="flush">
-      <ListGroup.Item>Gender : {gender}</ListGroup.Item>
-      <ListGroup.Item>Birth year : {birth_year}</ListGroup.Item>
+      <ListGroup.Item>Language : {language}</ListGroup.Item>
       <ListGroup.Item>
         Homeworld : <LinkContainer url={homeworld} />
-      </ListGroup.Item>
-      <ListGroup.Item>
-        Species : <LinkContainer url={species[0]} />
       </ListGroup.Item>
     </ListGroup>
     <Card.Footer>
